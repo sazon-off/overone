@@ -4,10 +4,10 @@ from datetime import datetime
 class Ad:
     count = 0
 
-    def __init__(self):
-        self.heading = input('Заголовок: ')
-        self.description = input('Описание: ')
-        self.author = input('Автор: ')
+    def __init__(self, heading = input('Заголовк:'), description = input('Описание: '), author = input('Автор: ')):
+        self.heading = heading
+        self.description = description
+        self.author = author
         self.date = datetime.now()
 
     def info(self):
@@ -18,26 +18,20 @@ class Ad:
         print(self.date)
         print('Просмотры: ', Ad.count)
 
-    def setRename(self):
-        self.heading = input('Заголовок: ')
+    def setRename(self, heading):
+        self.heading = heading
 
     def getRename(self):
-        try:
             return self.heading
-        except:
-            return
 
-    def setEdit(self):
-        self.description = input('Описание: ')
+    def setEdit(self, description):
+        self.description = description
 
     def getEdit(self):
-        try:
             return self.description
-        except:
-            return
 
 
 d = Ad()
 d.info()
-d.setRename()
+d.setRename('aaa')
 d.info()
