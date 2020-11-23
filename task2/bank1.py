@@ -1,4 +1,4 @@
-class Structura:
+class Services:
     def __init__(self, name, currency, annual_interest_rate, bank_name):
         self.name = name
         self.currency = currency
@@ -6,9 +6,9 @@ class Structura:
         self.bank_name = bank_name
 
 
-class Deposit(Structura):
+class Deposit(Services):
     def __init__(self, name, currency, annual_interest_rate, min_sum, max_sum, bank_name=None):
-        Structura.__init__(self, name, currency, annual_interest_rate, bank_name)
+        Services.__init__(self, name, currency, annual_interest_rate, bank_name)
         self.min_sum = min_sum
         self.max_sum = max_sum
 
@@ -29,9 +29,9 @@ class Deposit(Structura):
         return f"{self.name}"
 
 
-class Credit(Structura):
+class Credit(Services):
     def __init__(self, name, currency, annual_interest_rate, down_payment, bank_name=None):
-        Structura.__init__(self, name, currency, annual_interest_rate, bank_name)
+        Services.__init__(self, name, currency, annual_interest_rate, bank_name)
         self.down_payment = down_payment
 
     def info(self):
